@@ -12,3 +12,19 @@ extension Array {
         }
     }
 }
+
+extension Array where Element: BinaryFloatingPoint {
+    func greater(_ than: Element) -> Bool {
+        for el in self {
+            if el <= than { return false }
+        }
+        return true
+    }
+    func less(_ than: Element) -> Bool {
+        for el in self {
+            if el >= than { return false }
+        }
+        return true
+    }
+}
+
