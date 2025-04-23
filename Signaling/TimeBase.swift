@@ -7,7 +7,7 @@ class TimeBase: ObservableObject {
     static let MAXINT: Int = Int.max
     
     static var allPaused: Bool = false
-    
+    // ToDo: add Package.swift to Swing and MoGL.GL submodules to prep for package manager switch
     
     var interval: Double = 1.0 / 20.0
     @Published var isPaused: Bool = false
