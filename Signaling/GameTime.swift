@@ -19,12 +19,10 @@ class GameTime: TimeBase {
     // === Functions ===
     override func update(_ t: TimeBase) {
         super.update(t)
+        
         realTime += interval
         realFrame += 1
-        
-        // safeguard from overflow
-        if time >= TimeBase.MAX || frame >= TimeBase.MAXINT
-            || realTime >= TimeBase.MAX || realFrame >= TimeBase.MAXINT {
+        if realTime >= TimeBase.MAX || realFrame >= TimeBase.MAXINT {
             realTime = 0; realFrame = 0
         }
     }

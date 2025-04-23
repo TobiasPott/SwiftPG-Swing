@@ -4,6 +4,8 @@ import Foundation
 extension CGPoint {
     init(_ x: CGFloat, _ y: CGFloat) { self.init(x: x, y: y) }
     
+    var cgSize: CGSize { get { return CGSize(x, y) } }
+    
     func normalized() -> CGPoint {
         var len: CGFloat = sqrt((self.x * self.x) + (self.y * self.y))
         if len == 0 { len = 1 }

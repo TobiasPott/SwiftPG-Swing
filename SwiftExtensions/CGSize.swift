@@ -4,6 +4,7 @@ import Foundation
 extension CGSize {
     init(_ w: CGFloat, _ h: CGFloat) { self.init(width: w, height: h) }
     
+    var cgPoint: CGPoint { get { return CGPoint(width, height) } }
     var aspect: CGFloat { get { return width / height } }
     
     func normalized() -> CGSize {

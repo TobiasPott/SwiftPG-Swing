@@ -11,13 +11,13 @@ class TimeBase: ObservableObject {
     
     var interval: Double = 1.0 / 20.0
     @Published var isPaused: Bool = false
-    @Published private(set) var time = 0.0
-    @Published private(set) var frame: Int = 0
+    @Published var time = 0.0
+    @Published var frame: Int = 0
     
     let tick: Event<TimeBase> = Event<TimeBase>()
     
     func update(_ t: TimeBase) {
-        if isPaused || TimeBase.allPaused {
+        if !isPaused && !TimeBase.allPaused {
             time += interval
             frame += 1
             if time >= TimeBase.MAX || frame >= TimeBase.MAXINT {

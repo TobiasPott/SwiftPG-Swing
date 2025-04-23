@@ -14,6 +14,19 @@ extension Array {
 }
 
 extension Array where Element: BinaryFloatingPoint {
+    static func +=(lhs: inout Array, rhs: Element) {
+        for i in 0..<lhs.count { lhs[i] = lhs[i] + rhs }
+    }
+    static func -=(lhs: inout Array, rhs: Element) {
+        for i in 0..<lhs.count { lhs[i] = lhs[i] - rhs }
+    }
+    static func *=(lhs: inout Array, rhs: Element) {
+        for i in 0..<lhs.count { lhs[i] = lhs[i] * rhs }
+    }
+    static func /=(lhs: inout Array, rhs: Element) {
+        for i in 0..<lhs.count { lhs[i] = lhs[i] / rhs }
+    }
+    
     func greater(_ than: Element) -> Bool {
         for el in self {
             if el <= than { return false }
