@@ -29,6 +29,7 @@ class TimeBase: ObservableObject {
         isPaused = paused
         time = 0.0
         frame = 0
+        tick.invoke(data: self)
     }
     
     public func onTick() {
