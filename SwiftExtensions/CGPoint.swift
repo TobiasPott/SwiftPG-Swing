@@ -11,9 +11,8 @@ extension CGPoint {
         if len == 0 { len = 1 }
         return .init(x: self.x / len, y: self.y / len)
     }
-    func magnitude() -> CGFloat {
-        return sqrt((self.x * self.x) + (self.y * self.y))
-    }
+    var magnitudeSquared: Double { get { return (x * x) + (y * y) } }
+    var magnitude: Double { get { return sqrt(magnitudeSquared) } }
     
     func rotate(_ angle: Int, _ origin: CGPoint) -> CGPoint { return rotate(CGFloat(angle), origin) }
     func rotate(_ angle: CGFloat, _ origin: CGPoint) -> CGPoint {
